@@ -1,0 +1,44 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+struct student
+{
+string name;
+int age;
+int score;
+};
+void printstudent(struct student s){
+
+	cout<<"子函数中打印的结果  "<<s.name
+		<<" 年龄                 "<<s.age
+		<<" 分数                 "<<s.score
+		<<endl;
+
+}
+void printstudent2(struct student *p){
+
+	cout<<"子函数2中打印的结果  "<<p->name
+		<<" 年龄                "<<p->age
+		<<" 分数                "<<p->score
+		<<endl;
+
+}
+int main(){
+	
+	struct student s;
+	s.name  = "张三";
+	s.age   = 18;
+	s.score = 100;
+
+	/*cout<<"main函数中打印的结果  "<<s.name
+		<<" 年龄                 "<<s.age
+		<<" 分数                 "<<s.score
+		<<endl;*/
+	printstudent(s);
+	printstudent2(&s);
+
+
+system("pause");
+return 0;
+}
